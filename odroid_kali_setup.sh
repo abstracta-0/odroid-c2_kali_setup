@@ -32,6 +32,6 @@ while [ $status != 0 ];do
 	break
 done
 
-apt-get update && apt-get dist-upgrade -y
+#apt-get update && apt-get dist-upgrade -y
 
-reboot
+#reboot
