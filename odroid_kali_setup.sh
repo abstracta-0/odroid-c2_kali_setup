@@ -19,11 +19,16 @@ echo "/boot/backup/restore.sh" >> /etc/rc.local
 echo "exit 0" >> /etc/rc.local
 chmod +x /etc/rc.local
 systemctl enable rc-local
+service rc-local start
 
 passwd
 
 status=$(echo $?)
 
-if [ $status != 0 ];do
+while [ $status != 0 ];do
 	passwd
-fi
+	status=$(echo $?)
+	break
+done
+
+apt-get update && apt-get dist-upgrade
