@@ -2,10 +2,10 @@
 
 mount /dev/mmcblk0p1 /boot
 echo '/dev/mmcblk0p1 /boot auto defaults 0 0' >> /etc/fstab
-mkdir /boot/backup
-cp /boot/Image /boot/backup
-cp /boot/meson64_odroidc2.dtb /boot/backup
-cp /boot/uInitrd /boot/backup
+#mkdir /boot/backup
+#cp /boot/Image /boot/backup
+#cp /boot/meson64_odroidc2.dtb /boot/backup
+#cp /boot/uInitrd /boot/backup
 touch /boot/backup/restore.sh
 echo "#!/bin/bash" >> /boot/backup/restore.sh
 echo "cp /boot/backup/Image /boot/" >> /boot/backup/restore.sh
@@ -32,6 +32,6 @@ while [ $status != 0 ];do
 	break
 done
 
-apt-get update && apt-get dist-upgrade
+apt-get update && apt-get dist-upgrade -y
 
 reboot
