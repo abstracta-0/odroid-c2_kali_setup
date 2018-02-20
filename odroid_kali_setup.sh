@@ -33,3 +33,5 @@ while [ $status != 0 ];do
 done
 
 apt-get update && apt-get dist-upgrade
+
+reboot
