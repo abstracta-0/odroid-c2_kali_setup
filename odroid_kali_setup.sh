@@ -1,6 +1,7 @@
 #!/bin/bash
 
 mount /dev/mmcblk0p1 /boot
+echo '/dev/mmcblk0p1 /boot auto defaults 0 0' >> /etc/fstab
 mkdir /boot/backup
 cp /boot/Image /boot/backup
 cp /boot/meson64_odroidc2.dtb /boot/backup
